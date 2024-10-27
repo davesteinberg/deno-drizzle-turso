@@ -4,3 +4,4 @@ coverage
 *.log
 *.lcov
 .env
+*.db

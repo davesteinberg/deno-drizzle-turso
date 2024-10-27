@@ -1,7 +1,17 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "start": "deno run -ERWS --allow-ffi --env-file src/main.ts",
+    "dev": "deno run -ERWS --allow-ffi --env-file --watch src/main.ts",
+    "drizzle-kit": "deno run -A --env-file npm:drizzle-kit",
+    "db:generate": "deno run -A --env-file npm:drizzle-kit generate",
+    "db:migrate": "deno run -A --env-file npm:drizzle-kit migrate"
   },
+  "imports": {
+    "@libsql/client": "npm:@libsql/client@^0.14.0",
+    "drizzle-kit": "npm:drizzle-kit@^0.26.2",
+    "drizzle-orm": "npm:drizzle-orm@^0.35.3"
+  },
+  "nodeModulesDir": "auto",
   "fmt": {
     "lineWidth": 100,
     "proseWrap": "preserve"
