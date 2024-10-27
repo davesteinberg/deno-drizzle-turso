@@ -40,10 +40,10 @@ sed -i -e 's/"no-deno"/"deno"/' node_modules/@libsql/client/package.json
 
 3. [Apply the above workaround](#libsql-client-issue) to use Drizzle Kit with a local database file.
 
-4. Apply the schema to the database:
+4. Apply the SQL migration to the database:
 
    ```sh
-   deno task drizzle-kit push
+   deno task db:migrate
    ```
 
 5. Run the [main.ts](src/main.ts) script to seed and query the database.
@@ -84,6 +84,15 @@ These steps mirror those in [Get Started with Drizzle and SQLite](https://orm.dr
    ```sh
    deno task drizzle-kit push
    ```
+
+   Or, to generate and apply a SQL migration (using the `db:` tasks):
+
+   ```sh
+   deno task db:generate
+   deno task db:migrate
+   ```
+
+   The generated migration is committed to this repository.
 
 7. Seed and query the database: See [main.ts](src/main.ts).
 
