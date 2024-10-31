@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "start": "deno run -ERWS --allow-ffi --env-file src/main.ts",
-    "dev": "deno run -ERWS --allow-ffi --env-file --watch src/main.ts",
+    "start": "deno run -ENRWS --allow-ffi --env-file src/main.ts",
+    "dev": "deno run -ENRWS --allow-ffi --env-file --watch src/main.ts",
     "drizzle-kit": "deno run -A --env-file npm:drizzle-kit",
     "db:generate": "deno run -A --env-file npm:drizzle-kit generate",
     "db:migrate": "deno run -A --env-file npm:drizzle-kit migrate"

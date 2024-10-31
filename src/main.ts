@@ -3,7 +3,10 @@ import { eq } from "drizzle-orm";
 import { usersTable } from "./db/schema.ts";
 
 const db = drizzle({
-  connection: { url: Deno.env.get("DB_URL")! },
+  connection: {
+    url: Deno.env.get("DB_URL")!,
+    authToken: Deno.env.get("DB_AUTH_TOKEN"),
+  },
 });
 
 async function main() {
